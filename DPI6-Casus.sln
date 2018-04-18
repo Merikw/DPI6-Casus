@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client-Application", "DPI6-Casus\Client-Application.csproj", "{98FB2A05-5CB1-4BDD-A8DB-F0EF52296922}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GENERAL_DPI6", "GENERAL_DPI6\GENERAL_DPI6.csproj", "{0FF7BAD5-840A-4DC3-99B0-2C9784188F4F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98FB2A05-5CB1-4BDD-A8DB-F0EF52296922}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98FB2A05-5CB1-4BDD-A8DB-F0EF52296922}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98FB2A05-5CB1-4BDD-A8DB-F0EF52296922}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98FB2A05-5CB1-4BDD-A8DB-F0EF52296922}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FF7BAD5-840A-4DC3-99B0-2C9784188F4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FF7BAD5-840A-4DC3-99B0-2C9784188F4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FF7BAD5-840A-4DC3-99B0-2C9784188F4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FF7BAD5-840A-4DC3-99B0-2C9784188F4F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {63F11B39-3D03-43E5-BA7B-B77AD05F0A1F}
+	EndGlobalSection
+EndGlobal
