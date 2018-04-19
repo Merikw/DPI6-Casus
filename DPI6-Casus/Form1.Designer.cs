@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
-            this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
+            this.cbCityFrom = new MetroFramework.Controls.MetroComboBox();
+            this.cbCityTo = new MetroFramework.Controls.MetroComboBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.dtpDate = new MetroFramework.Controls.MetroDateTime();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
@@ -56,27 +56,27 @@
             this.materialLabel1.TabIndex = 0;
             this.materialLabel1.Text = "FROM:";
             // 
-            // metroComboBox1
+            // cbCityFrom
             // 
-            this.metroComboBox1.FontSize = MetroFramework.MetroComboBoxSize.Tall;
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 29;
-            this.metroComboBox1.Location = new System.Drawing.Point(85, 108);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(265, 35);
-            this.metroComboBox1.TabIndex = 1;
-            this.metroComboBox1.UseSelectable = true;
+            this.cbCityFrom.FontSize = MetroFramework.MetroComboBoxSize.Tall;
+            this.cbCityFrom.FormattingEnabled = true;
+            this.cbCityFrom.ItemHeight = 29;
+            this.cbCityFrom.Location = new System.Drawing.Point(85, 108);
+            this.cbCityFrom.Name = "cbCityFrom";
+            this.cbCityFrom.Size = new System.Drawing.Size(265, 35);
+            this.cbCityFrom.TabIndex = 1;
+            this.cbCityFrom.UseSelectable = true;
             // 
-            // metroComboBox2
+            // cbCityTo
             // 
-            this.metroComboBox2.FontSize = MetroFramework.MetroComboBoxSize.Tall;
-            this.metroComboBox2.FormattingEnabled = true;
-            this.metroComboBox2.ItemHeight = 29;
-            this.metroComboBox2.Location = new System.Drawing.Point(431, 108);
-            this.metroComboBox2.Name = "metroComboBox2";
-            this.metroComboBox2.Size = new System.Drawing.Size(265, 35);
-            this.metroComboBox2.TabIndex = 3;
-            this.metroComboBox2.UseSelectable = true;
+            this.cbCityTo.FontSize = MetroFramework.MetroComboBoxSize.Tall;
+            this.cbCityTo.FormattingEnabled = true;
+            this.cbCityTo.ItemHeight = 29;
+            this.cbCityTo.Location = new System.Drawing.Point(431, 108);
+            this.cbCityTo.Name = "cbCityTo";
+            this.cbCityTo.Size = new System.Drawing.Size(265, 35);
+            this.cbCityTo.TabIndex = 3;
+            this.cbCityTo.UseSelectable = true;
             // 
             // materialLabel2
             // 
@@ -207,9 +207,9 @@
             this.Controls.Add(this.dtpTime);
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.dtpDate);
-            this.Controls.Add(this.metroComboBox2);
+            this.Controls.Add(this.cbCityTo);
             this.Controls.Add(this.materialLabel2);
-            this.Controls.Add(this.metroComboBox1);
+            this.Controls.Add(this.cbCityFrom);
             this.Controls.Add(this.materialLabel1);
             this.Name = "Form1";
             this.Text = "Client application";
@@ -222,8 +222,8 @@
         #endregion
 
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
-        private MetroFramework.Controls.MetroComboBox metroComboBox2;
+        private MetroFramework.Controls.MetroComboBox cbCityFrom;
+        private MetroFramework.Controls.MetroComboBox cbCityTo;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MetroFramework.Controls.MetroDateTime dtpDate;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;

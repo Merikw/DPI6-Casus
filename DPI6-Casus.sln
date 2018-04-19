@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client-Application", "DPI6-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GENERAL_DPI6", "GENERAL_DPI6\GENERAL_DPI6.csproj", "{0FF7BAD5-840A-4DC3-99B0-2C9784188F4F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server-Application", "Server-Application\Server-Application.csproj", "{E9C2842E-AE47-417C-9A0E-7B537915EED4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transport_Company-Application", "Transport_Company-Application\Transport_Company-Application.csproj", "{5BCFC081-ED98-4C30-A6E8-95BC7C1C5DF1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{0FF7BAD5-840A-4DC3-99B0-2C9784188F4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FF7BAD5-840A-4DC3-99B0-2C9784188F4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FF7BAD5-840A-4DC3-99B0-2C9784188F4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9C2842E-AE47-417C-9A0E-7B537915EED4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9C2842E-AE47-417C-9A0E-7B537915EED4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9C2842E-AE47-417C-9A0E-7B537915EED4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9C2842E-AE47-417C-9A0E-7B537915EED4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BCFC081-ED98-4C30-A6E8-95BC7C1C5DF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BCFC081-ED98-4C30-A6E8-95BC7C1C5DF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BCFC081-ED98-4C30-A6E8-95BC7C1C5DF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BCFC081-ED98-4C30-A6E8-95BC7C1C5DF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

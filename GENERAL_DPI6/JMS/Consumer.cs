@@ -11,13 +11,14 @@ namespace GENERAL_DPI6.JMS
     public class Consumer
     {
         private string QueueName;
-        private ConnectionFactory connectionFactory;
+        private ConnectionFactory ConnectionFactory;
 
-        public Consumer()
+        public Consumer(string queueName = "")
         {
-            connectionFactory = new ConnectionFactory();
-            connectionFactory.HostName = GLOBAL.HOST_NAME;
-            connectionFactory.Port = GLOBAL.PORT;
+            QueueName = queueName;
+            ConnectionFactory = new ConnectionFactory();
+            ConnectionFactory.HostName = GLOBAL.HOST_NAME;
+            ConnectionFactory.Port = GLOBAL.PORT;
         }
 
         public void SendConnectionRequest()

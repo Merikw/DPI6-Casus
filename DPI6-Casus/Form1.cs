@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using GENERAL_DPI6.JMS;
+using GENERAL_DPI6.Models.Connection;
 using MaterialSkin;
 using MaterialSkin.Controls;
 
@@ -15,6 +9,8 @@ namespace DPI6_Casus
 {
     public partial class Form1 : MaterialForm
     {
+        private Producer producer;
+
         public Form1()
         {
             InitializeComponent();
@@ -28,6 +24,8 @@ namespace DPI6_Casus
                 Primary.Blue500, Accent.LightBlue200,
                 TextShade.WHITE
             );
+
+            producer = new Producer(Guid.NewGuid().ToString());
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -35,6 +33,19 @@ namespace DPI6_Casus
             dtpTime.Format = DateTimePickerFormat.Custom;
             dtpTime.ShowUpDown = true;
             dtpTime.CustomFormat = "HH:mm";
+        }
+
+        private void sendConnectionRequest()
+        {
+            DateTime date = dtpDate.Value;
+            DateTime time = dtpTime.Value;
+            string cityFrom = cbCityFrom.SelectedText;
+            string cityTo = cbCityTo.SelectedText;
+
+            if(date != null && time != null && !String.IsNullOrEmpty(cityFrom) && !String.IsNullOrEmpty(cityTo)){
+                ConnectionRequest connectionRequest = new ConnectionRequest(date, time, cityFrom, cityTo);
+                producer.SendConnectionRequest(connectionRequest);
+            }
         }
     }
 }

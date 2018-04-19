@@ -40,16 +40,14 @@ namespace GENERAL_DPI6.JMS
 
                 string message = JsonConvert.SerializeObject(connectionRequest);
 
-                byte[] body = Encoding.UTF8.GetBytes(message);
-
-                var properties = channel.CreateBasicProperties();
+                IBasicProperties properties = channel.CreateBasicProperties();
 
                 properties.Persistent = true;
 
                 channel.BasicPublish(exchange: "",
-                                     routingKey: "task_queue",
+                                     routingKey: QueueName,
                                      basicProperties: properties,
-                                     body: body);
+                                     body: Encoding.UTF8.GetBytes(message));
             }
         }
     }
