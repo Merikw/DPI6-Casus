@@ -1,5 +1,5 @@
 ﻿using System.Windows.Forms;
-
+using GENERAL_DPI6.JMS;
 using MaterialSkin;
 using MaterialSkin.Controls;
 
@@ -24,7 +24,8 @@ namespace Transport_Company_Application
 
         private void Form1_Load(object sender, System.EventArgs e)
         {
-
+            TransportCompany transportCompany = new TransportCompany();
+            transportCompany.ListenToConnectionRequest();
         }
     }
 }

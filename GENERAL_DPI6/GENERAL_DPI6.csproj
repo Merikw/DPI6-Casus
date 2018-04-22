@@ -51,8 +51,9 @@
   <ItemGroup>
     <Compile Include="Enums\TRANSPORT_TYPE.cs" />
     <Compile Include="Global\GLOBAL.cs" />
-    <Compile Include="JMS\Consumer.cs" />
-    <Compile Include="JMS\Producer.cs" />
+    <Compile Include="JMS\Client.cs" />
+    <Compile Include="JMS\Server.cs" />
+    <Compile Include="JMS\TransportCompany.cs" />
     <Compile Include="Models\Connection\ConnectionReply.cs" />
     <Compile Include="Models\Connection\ConnectionRequest.cs" />
     <Compile Include="Models\RequestReply.cs" />
