@@ -12,7 +12,6 @@ namespace Server_Application
         static void Main(string[] args)
         {
             Server server = new Server();
-            server.ListenToConnectionRequest();
             Console.ReadLine();
         }
     }

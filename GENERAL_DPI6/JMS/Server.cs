@@ -51,9 +51,11 @@ namespace GENERAL_DPI6.JMS
             propsConnectionRequestToTransportCompany.CorrelationId = Guid.NewGuid().ToString();
             propsConnectionRequestToTransportCompany.ReplyTo = channelConnectionRequestToTransportCompany.QueueDeclare().QueueName;
             propsConnectionRequestToTransportCompany.Persistent = true;
+
+            ListenToConnectionRequest();
         }
 
-        public void ListenToConnectionRequest()
+        private void ListenToConnectionRequest()
         {
             var consumer = new EventingBasicConsumer(channelConnectionRequest);
             consumer.Received += (model, ea) =>

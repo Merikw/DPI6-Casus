@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtTransportCompanyName = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,9 +38,9 @@
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialRadioButton1 = new MaterialSkin.Controls.MaterialRadioButton();
-            this.materialRadioButton2 = new MaterialSkin.Controls.MaterialRadioButton();
-            this.materialRadioButton3 = new MaterialSkin.Controls.MaterialRadioButton();
+            this.rbTypeBus = new MaterialSkin.Controls.MaterialRadioButton();
+            this.rbTypeTrain = new MaterialSkin.Controls.MaterialRadioButton();
+            this.rbTypePlane = new MaterialSkin.Controls.MaterialRadioButton();
             this.materialSingleLineTextField4 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialSingleLineTextField5 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
@@ -51,20 +51,20 @@
             this.materialRaisedButton3 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.SuspendLayout();
             // 
-            // materialSingleLineTextField1
+            // txtTransportCompanyName
             // 
-            this.materialSingleLineTextField1.Depth = 0;
-            this.materialSingleLineTextField1.Hint = "";
-            this.materialSingleLineTextField1.Location = new System.Drawing.Point(213, 114);
-            this.materialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField1.Name = "materialSingleLineTextField1";
-            this.materialSingleLineTextField1.PasswordChar = '\0';
-            this.materialSingleLineTextField1.SelectedText = "";
-            this.materialSingleLineTextField1.SelectionLength = 0;
-            this.materialSingleLineTextField1.SelectionStart = 0;
-            this.materialSingleLineTextField1.Size = new System.Drawing.Size(634, 28);
-            this.materialSingleLineTextField1.TabIndex = 0;
-            this.materialSingleLineTextField1.UseSystemPasswordChar = false;
+            this.txtTransportCompanyName.Depth = 0;
+            this.txtTransportCompanyName.Hint = "";
+            this.txtTransportCompanyName.Location = new System.Drawing.Point(213, 114);
+            this.txtTransportCompanyName.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtTransportCompanyName.Name = "txtTransportCompanyName";
+            this.txtTransportCompanyName.PasswordChar = '\0';
+            this.txtTransportCompanyName.SelectedText = "";
+            this.txtTransportCompanyName.SelectionLength = 0;
+            this.txtTransportCompanyName.SelectionStart = 0;
+            this.txtTransportCompanyName.Size = new System.Drawing.Size(634, 28);
+            this.txtTransportCompanyName.TabIndex = 0;
+            this.txtTransportCompanyName.UseSystemPasswordChar = false;
             // 
             // materialLabel1
             // 
@@ -90,6 +90,7 @@
             this.materialRaisedButton1.TabIndex = 2;
             this.materialRaisedButton1.Text = "Add company";
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
             // 
             // label1
             // 
@@ -178,56 +179,56 @@
             this.materialLabel7.TabIndex = 16;
             this.materialLabel7.Text = "Type of company:";
             // 
-            // materialRadioButton1
+            // rbTypeBus
             // 
-            this.materialRadioButton1.AutoSize = true;
-            this.materialRadioButton1.Depth = 0;
-            this.materialRadioButton1.Font = new System.Drawing.Font("Roboto", 10F);
-            this.materialRadioButton1.Location = new System.Drawing.Point(213, 168);
-            this.materialRadioButton1.Margin = new System.Windows.Forms.Padding(0);
-            this.materialRadioButton1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialRadioButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRadioButton1.Name = "materialRadioButton1";
-            this.materialRadioButton1.Ripple = true;
-            this.materialRadioButton1.Size = new System.Drawing.Size(59, 30);
-            this.materialRadioButton1.TabIndex = 17;
-            this.materialRadioButton1.TabStop = true;
-            this.materialRadioButton1.Text = "Bus";
-            this.materialRadioButton1.UseVisualStyleBackColor = true;
+            this.rbTypeBus.AutoSize = true;
+            this.rbTypeBus.Depth = 0;
+            this.rbTypeBus.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbTypeBus.Location = new System.Drawing.Point(213, 168);
+            this.rbTypeBus.Margin = new System.Windows.Forms.Padding(0);
+            this.rbTypeBus.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbTypeBus.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbTypeBus.Name = "rbTypeBus";
+            this.rbTypeBus.Ripple = true;
+            this.rbTypeBus.Size = new System.Drawing.Size(59, 30);
+            this.rbTypeBus.TabIndex = 17;
+            this.rbTypeBus.TabStop = true;
+            this.rbTypeBus.Text = "Bus";
+            this.rbTypeBus.UseVisualStyleBackColor = true;
             // 
-            // materialRadioButton2
+            // rbTypeTrain
             // 
-            this.materialRadioButton2.AutoSize = true;
-            this.materialRadioButton2.Depth = 0;
-            this.materialRadioButton2.Font = new System.Drawing.Font("Roboto", 10F);
-            this.materialRadioButton2.Location = new System.Drawing.Point(295, 168);
-            this.materialRadioButton2.Margin = new System.Windows.Forms.Padding(0);
-            this.materialRadioButton2.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialRadioButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRadioButton2.Name = "materialRadioButton2";
-            this.materialRadioButton2.Ripple = true;
-            this.materialRadioButton2.Size = new System.Drawing.Size(70, 30);
-            this.materialRadioButton2.TabIndex = 18;
-            this.materialRadioButton2.TabStop = true;
-            this.materialRadioButton2.Text = "Train";
-            this.materialRadioButton2.UseVisualStyleBackColor = true;
+            this.rbTypeTrain.AutoSize = true;
+            this.rbTypeTrain.Depth = 0;
+            this.rbTypeTrain.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbTypeTrain.Location = new System.Drawing.Point(295, 168);
+            this.rbTypeTrain.Margin = new System.Windows.Forms.Padding(0);
+            this.rbTypeTrain.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbTypeTrain.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbTypeTrain.Name = "rbTypeTrain";
+            this.rbTypeTrain.Ripple = true;
+            this.rbTypeTrain.Size = new System.Drawing.Size(70, 30);
+            this.rbTypeTrain.TabIndex = 18;
+            this.rbTypeTrain.TabStop = true;
+            this.rbTypeTrain.Text = "Train";
+            this.rbTypeTrain.UseVisualStyleBackColor = true;
             // 
-            // materialRadioButton3
+            // rbTypePlane
             // 
-            this.materialRadioButton3.AutoSize = true;
-            this.materialRadioButton3.Depth = 0;
-            this.materialRadioButton3.Font = new System.Drawing.Font("Roboto", 10F);
-            this.materialRadioButton3.Location = new System.Drawing.Point(380, 168);
-            this.materialRadioButton3.Margin = new System.Windows.Forms.Padding(0);
-            this.materialRadioButton3.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialRadioButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRadioButton3.Name = "materialRadioButton3";
-            this.materialRadioButton3.Ripple = true;
-            this.materialRadioButton3.Size = new System.Drawing.Size(73, 30);
-            this.materialRadioButton3.TabIndex = 19;
-            this.materialRadioButton3.TabStop = true;
-            this.materialRadioButton3.Text = "Plane";
-            this.materialRadioButton3.UseVisualStyleBackColor = true;
+            this.rbTypePlane.AutoSize = true;
+            this.rbTypePlane.Depth = 0;
+            this.rbTypePlane.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbTypePlane.Location = new System.Drawing.Point(380, 168);
+            this.rbTypePlane.Margin = new System.Windows.Forms.Padding(0);
+            this.rbTypePlane.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbTypePlane.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbTypePlane.Name = "rbTypePlane";
+            this.rbTypePlane.Ripple = true;
+            this.rbTypePlane.Size = new System.Drawing.Size(73, 30);
+            this.rbTypePlane.TabIndex = 19;
+            this.rbTypePlane.TabStop = true;
+            this.rbTypePlane.Text = "Plane";
+            this.rbTypePlane.UseVisualStyleBackColor = true;
             // 
             // materialSingleLineTextField4
             // 
@@ -337,9 +338,9 @@
             this.Controls.Add(this.materialLabel8);
             this.Controls.Add(this.materialSingleLineTextField5);
             this.Controls.Add(this.materialSingleLineTextField4);
-            this.Controls.Add(this.materialRadioButton3);
-            this.Controls.Add(this.materialRadioButton2);
-            this.Controls.Add(this.materialRadioButton1);
+            this.Controls.Add(this.rbTypePlane);
+            this.Controls.Add(this.rbTypeTrain);
+            this.Controls.Add(this.rbTypeBus);
             this.Controls.Add(this.materialLabel7);
             this.Controls.Add(this.materialLabel6);
             this.Controls.Add(this.materialLabel5);
@@ -349,7 +350,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.materialRaisedButton1);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.materialSingleLineTextField1);
+            this.Controls.Add(this.txtTransportCompanyName);
             this.Name = "Form1";
             this.Text = "Transport Company Application";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -360,7 +361,7 @@
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField1;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtTransportCompanyName;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
         private System.Windows.Forms.Label label1;
@@ -370,9 +371,9 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
         private MaterialSkin.Controls.MaterialLabel materialLabel7;
-        private MaterialSkin.Controls.MaterialRadioButton materialRadioButton1;
-        private MaterialSkin.Controls.MaterialRadioButton materialRadioButton2;
-        private MaterialSkin.Controls.MaterialRadioButton materialRadioButton3;
+        private MaterialSkin.Controls.MaterialRadioButton rbTypeBus;
+        private MaterialSkin.Controls.MaterialRadioButton rbTypeTrain;
+        private MaterialSkin.Controls.MaterialRadioButton rbTypePlane;
         private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField4;
         private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField5;
         private MaterialSkin.Controls.MaterialLabel materialLabel8;

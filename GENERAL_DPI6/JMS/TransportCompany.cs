@@ -1,4 +1,8 @@
-﻿using GENERAL_DPI6.Global;
+﻿using GENERAL_DPI6.Database;
+using GENERAL_DPI6.Database.Implementation;
+using GENERAL_DPI6.Enums;
+using GENERAL_DPI6.Global;
+using GENERAL_DPI6.Models.DB_Models;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System;
@@ -11,14 +15,22 @@ namespace GENERAL_DPI6.JMS
 {
     public class TransportCompany
     {
+        private string transportCompanyName;
+        private TRANSPORT_TYPE TransportType;
+
         private readonly IConnection connection;
 
         private IBasicProperties propsReceiveConnectionRequest;
         private readonly IModel channelReceiveConnectionRequest;
         private string queueNameReceiveConnectionRequest;
 
-        public TransportCompany()
+        private ITransportCompanyDB TransportCompanyDB;
+
+        public TransportCompany(string name, TRANSPORT_TYPE transportType)
         {
+            transportCompanyName = name;
+            TransportType = transportType;
+
             ConnectionFactory connectionFactory = new ConnectionFactory();
             connectionFactory.HostName = GLOBAL.HOST_NAME;
             connectionFactory.Port = GLOBAL.PORT;
@@ -34,9 +46,23 @@ namespace GENERAL_DPI6.JMS
             channelReceiveConnectionRequest.QueueBind(queue: queueNameReceiveConnectionRequest,
                                   exchange: GLOBAL.CONNECTION_REQUEST_TO_TRANSPORT_COMPANY_EXCHANGE,
                                   routingKey: GLOBAL.TRANSPORT_DIRECT_ROUTING_KEY);
+
+            TransportCompanyDB = new TransportCompanyDB();
+
+            AddNewOrExistingTransportCompanyAsync(); 
+            ListenToConnectionRequest();
         }
 
-        public void ListenToConnectionRequest()
+        private async Task AddNewOrExistingTransportCompanyAsync()
+        {
+            TransportCompanyDBModel foundTransportCompany = await TransportCompanyDB.FindByName(transportCompanyName);
+            if(foundTransportCompany == null)
+            {
+                TransportCompanyDB.Insert(new TransportCompanyDBModel(transportCompanyName, TransportType));
+            }
+        }
+
+        private void ListenToConnectionRequest()
         {
             var consumer = new EventingBasicConsumer(channelReceiveConnectionRequest);
             consumer.Received += (model, ea) =>
@@ -44,8 +70,6 @@ namespace GENERAL_DPI6.JMS
                 var body = ea.Body;
                 var message = Encoding.UTF8.GetString(body);
                 var routingKey = ea.RoutingKey;
-                Console.WriteLine(" [x] Received '{0}':'{1}'",
-                                  routingKey, message);
             };
             channelReceiveConnectionRequest.BasicConsume(queue: queueNameReceiveConnectionRequest,
                                  autoAck: true,

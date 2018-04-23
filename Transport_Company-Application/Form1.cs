@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using GENERAL_DPI6.Enums;
 using GENERAL_DPI6.JMS;
 using MaterialSkin;
 using MaterialSkin.Controls;
@@ -24,8 +25,24 @@ namespace Transport_Company_Application
 
         private void Form1_Load(object sender, System.EventArgs e)
         {
-            TransportCompany transportCompany = new TransportCompany();
-            transportCompany.ListenToConnectionRequest();
+        }
+
+        private void materialRaisedButton1_Click(object sender, System.EventArgs e)
+        {
+            TRANSPORT_TYPE transportType = TRANSPORT_TYPE.TRAIN;
+
+            if (rbTypeBus.Checked)
+            {
+                transportType = TRANSPORT_TYPE.BUS;
+            } else if (rbTypePlane.Checked)
+            {
+                transportType = TRANSPORT_TYPE.AIRPLANE;
+            } else if (rbTypeTrain.Checked)
+            {
+                transportType = TRANSPORT_TYPE.TRAIN;
+            }
+
+            TransportCompany transportCompany = new TransportCompany(txtTransportCompanyName.Text, transportType);
         }
     }
 }
