@@ -28,6 +28,11 @@ namespace GENERAL_DPI6.Database.Implementation
             return foundTransportCompany;
         }
 
+        public Task<List<TransportCompanyDBModel>> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Insert(TransportCompanyDBModel obj)
         {
             var collection = MongoDB.GetDatabase().GetCollection<TransportCompanyDBModel>(MongoDB.GetCollectionTransportCompany());

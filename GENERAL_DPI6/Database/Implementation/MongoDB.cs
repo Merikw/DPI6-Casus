@@ -13,6 +13,7 @@ namespace GENERAL_DPI6.Database
         private IMongoDatabase database;
         private readonly static string DATABASENAME = "bp72o7kue5mqfnr";
         private readonly static string COLLECTIONTRANSPORTCOMPANY = "TransportCompany";
+        private readonly static string COLLECTIONCITY = "City";
         private readonly static string CONNECTIONSTRING = "mongodb://u4lf0yut74ulhc2:kg5YkBWrgX5KKxPQNP6V@bp72o7kue5mqfnr-mongodb.services.clever-cloud.com:27017/bp72o7kue5mqfnr";
 
         public MongoDB()
@@ -28,6 +29,11 @@ namespace GENERAL_DPI6.Database
         public string GetCollectionTransportCompany()
         {
             return COLLECTIONTRANSPORTCOMPANY;
+        }
+    
+        public string GetCollectionCity()
+        {
+            return COLLECTIONCITY;
         }
     }
 }

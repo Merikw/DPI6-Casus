@@ -18,16 +18,19 @@ namespace GENERAL_DPI6.Models.DB_Models
         public string Name { get; set; }
         [BsonElement]
         public TRANSPORT_TYPE TransportType { get; set; }
+        [BsonElement]
+        public List<ConnectionDBModel> Connections { get; set; }
         
         public TransportCompanyDBModel()
         {
 
         }
 
-        public TransportCompanyDBModel(string name, TRANSPORT_TYPE transportType)
+        public TransportCompanyDBModel(string name, TRANSPORT_TYPE transportType, List<ConnectionDBModel> connections)
         {
             Name = name;
             TransportType = transportType;
+            Connections = connections;
         }
     }
 }

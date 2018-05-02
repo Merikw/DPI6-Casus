@@ -63,6 +63,8 @@ namespace GENERAL_DPI6.JMS
                 var body = ea.Body;
                 var message = Encoding.UTF8.GetString(body);
 
+                Thread.Sleep(1000);
+
                 Console.WriteLine("Received CONNECTION REQUEST: {0}", message);
 
                 channelConnectionRequest.BasicAck(deliveryTag: ea.DeliveryTag, multiple: false);

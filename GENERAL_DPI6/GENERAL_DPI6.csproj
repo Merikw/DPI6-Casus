@@ -68,7 +68,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\Implementation\CityDB.cs" />
     <Compile Include="Database\Implementation\TransportCompanyDB.cs" />
+    <Compile Include="Database\Interface repo%27s\ICityDB.cs" />
     <Compile Include="Database\Interface repo%27s\IGenericDB.cs" />
     <Compile Include="Database\Interface repo%27s\IMongoDB.cs" />
     <Compile Include="Database\Interface repo%27s\ITransportCompanyDB.cs" />
@@ -80,6 +82,8 @@
     <Compile Include="JMS\TransportCompany.cs" />
     <Compile Include="Models\Connection\ConnectionReply.cs" />
     <Compile Include="Models\Connection\ConnectionRequest.cs" />
+    <Compile Include="Models\DB Models\CityDBModel.cs" />
+    <Compile Include="Models\DB Models\ConnectionDBModel.cs" />
     <Compile Include="Models\DB Models\TransportCompanyDBModel.cs" />
     <Compile Include="Models\RequestReply.cs" />
     <Compile Include="Models\Ticket\TicketRequest.cs" />

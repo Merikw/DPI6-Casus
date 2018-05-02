@@ -11,5 +11,6 @@ namespace GENERAL_DPI6.Database.Interface_repo_s
     {
         IMongoDatabase GetDatabase();
         string GetCollectionTransportCompany();
+        string GetCollectionCity();
     }
 }

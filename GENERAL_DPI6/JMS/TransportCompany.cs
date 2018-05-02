@@ -9,12 +9,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace GENERAL_DPI6.JMS
 {
     public class TransportCompany
     {
+        private TransportCompanyDBModel transportCompanyDBModel;
+
         private string transportCompanyName;
         private TRANSPORT_TYPE TransportType;
 
@@ -55,11 +58,17 @@ namespace GENERAL_DPI6.JMS
 
         private async Task AddNewOrExistingTransportCompanyAsync()
         {
+            TransportCompanyDBModel createdTransportCompany = new TransportCompanyDBModel();
             TransportCompanyDBModel foundTransportCompany = await TransportCompanyDB.FindByName(transportCompanyName);
             if(foundTransportCompany == null)
             {
-                TransportCompanyDB.Insert(new TransportCompanyDBModel(transportCompanyName, TransportType));
+                createdTransportCompany = new TransportCompanyDBModel(transportCompanyName, TransportType, new List<ConnectionDBModel>());
+                TransportCompanyDB.Insert(createdTransportCompany);
+            } else
+            {
+                createdTransportCompany = foundTransportCompany;
             }
+            transportCompanyDBModel = createdTransportCompany;
         }
 
         private void ListenToConnectionRequest()
@@ -74,6 +83,18 @@ namespace GENERAL_DPI6.JMS
             channelReceiveConnectionRequest.BasicConsume(queue: queueNameReceiveConnectionRequest,
                                  autoAck: true,
                                  consumer: consumer);
+        }
+
+        public TransportCompanyDBModel getTransportCompanyDBModel()
+        {
+            if(transportCompanyDBModel != null)
+            {
+                return transportCompanyDBModel;
+            } else
+            {
+                Thread.Sleep(300);
+                return getTransportCompanyDBModel();
+            }
         }
     }
 }
