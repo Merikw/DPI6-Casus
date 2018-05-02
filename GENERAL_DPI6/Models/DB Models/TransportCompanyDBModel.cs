@@ -32,5 +32,10 @@ namespace GENERAL_DPI6.Models.DB_Models
             TransportType = transportType;
             Connections = connections;
         }
+
+        public void addConnection(ConnectionDBModel connection)
+        {
+            Connections.Add(connection);
+        }
     }
 }

@@ -25,9 +25,8 @@ namespace GENERAL_DPI6.Models.DB_Models
 
         }
 
-        public ConnectionDBModel(Guid id, string cityFrom, string cityTo, int availableTickets, int price)
+        public ConnectionDBModel(string cityFrom, string cityTo, int availableTickets, int price)
         {
-            Id = id;
             CityFrom = cityFrom;
             CityTo = cityTo;
             AvailableTickets = availableTickets;

@@ -34,26 +34,26 @@ namespace GENERAL_DPI6.JMS
             transportCompanyName = name;
             TransportType = transportType;
 
-            ConnectionFactory connectionFactory = new ConnectionFactory();
-            connectionFactory.HostName = GLOBAL.HOST_NAME;
-            connectionFactory.Port = GLOBAL.PORT;
+            //ConnectionFactory connectionFactory = new ConnectionFactory();
+            //connectionFactory.HostName = GLOBAL.HOST_NAME;
+            //connectionFactory.Port = GLOBAL.PORT;
 
-            connection = connectionFactory.CreateConnection();
+            //connection = connectionFactory.CreateConnection();
 
-            channelReceiveConnectionRequest = connection.CreateModel();
+            //channelReceiveConnectionRequest = connection.CreateModel();
 
-            channelReceiveConnectionRequest.ExchangeDeclare(exchange: GLOBAL.CONNECTION_REQUEST_TO_TRANSPORT_COMPANY_EXCHANGE, type: "direct");
+            //channelReceiveConnectionRequest.ExchangeDeclare(exchange: GLOBAL.CONNECTION_REQUEST_TO_TRANSPORT_COMPANY_EXCHANGE, type: "direct");
 
-            queueNameReceiveConnectionRequest = channelReceiveConnectionRequest.QueueDeclare().QueueName;
+            //queueNameReceiveConnectionRequest = channelReceiveConnectionRequest.QueueDeclare().QueueName;
 
-            channelReceiveConnectionRequest.QueueBind(queue: queueNameReceiveConnectionRequest,
-                                  exchange: GLOBAL.CONNECTION_REQUEST_TO_TRANSPORT_COMPANY_EXCHANGE,
-                                  routingKey: GLOBAL.TRANSPORT_DIRECT_ROUTING_KEY);
+            //channelReceiveConnectionRequest.QueueBind(queue: queueNameReceiveConnectionRequest,
+            //                      exchange: GLOBAL.CONNECTION_REQUEST_TO_TRANSPORT_COMPANY_EXCHANGE,
+            //                      routingKey: GLOBAL.TRANSPORT_DIRECT_ROUTING_KEY);
 
             TransportCompanyDB = new TransportCompanyDB();
 
             AddNewOrExistingTransportCompanyAsync(); 
-            ListenToConnectionRequest();
+            //ListenToConnectionRequest();
         }
 
         private async Task AddNewOrExistingTransportCompanyAsync()
@@ -95,6 +95,12 @@ namespace GENERAL_DPI6.JMS
                 Thread.Sleep(300);
                 return getTransportCompanyDBModel();
             }
+        }
+
+        public void AddConnection(ConnectionDBModel connection)
+        {
+            transportCompanyDBModel.addConnection(connection);
+
         }
     }
 }

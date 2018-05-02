@@ -14,7 +14,8 @@ namespace Transport_Company_Application
 {
     public partial class Form1 : MaterialForm
     {
-        ICityDB cityDB; 
+        private ICityDB cityDB;
+        private TransportCompany transportCompany;
 
         public Form1()
         {
@@ -60,8 +61,8 @@ namespace Transport_Company_Application
             }
 
             setAddedCompany(true);
-         
-            //TransportCompany transportCompany = new TransportCompany(txtTransportCompanyName.Text, transportType);
+
+            transportCompany = new TransportCompany(txtTransportCompanyName.Text, transportType);
         }
 
         private void setAddedCompany(bool added)
@@ -92,11 +93,26 @@ namespace Transport_Company_Application
 
         private async Task setCitiesAsync()
         {
+            cityDB.Insert(new CityDBModel("Berlin"));
             List<CityDBModel> cities = await cityDB.GetAll();
             foreach(CityDBModel city in cities)
             {
                 cbFromCity.Items.Add(city.Name);
                 cbToCity.Items.Add(city.Name);
+            }
+        }
+
+        private void btnAddConnection_Click(object sender, System.EventArgs e)
+        {
+            string cityFrom = cbFromCity.SelectedText.ToString();
+            string cityTo = cbToCity.SelectedText.ToString();
+            int price = 0;
+            int ticketsAvailable = 0;
+            if (int.TryParse(txtPrice.Text.ToString(), out price) && int.TryParse(txtAvailableTickets.Text.ToString(), out ticketsAvailable)
+                && !string.IsNullOrEmpty(cityFrom) && !string.IsNullOrEmpty(cityTo))
+            {
+                transportCompany.AddConnection(new ConnectionDBModel(cityFrom, cityTo, ticketsAvailable, price));
+                lvConnections.Items.Add(new ConnectionDBModel(cityFrom, cityTo, ticketsAvailable, price).ToString());
             }
         }
     }

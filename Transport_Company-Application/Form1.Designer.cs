@@ -324,6 +324,7 @@
             this.btnAddConnection.TabIndex = 29;
             this.btnAddConnection.Text = "Add connection";
             this.btnAddConnection.UseVisualStyleBackColor = true;
+            this.btnAddConnection.Click += new System.EventHandler(this.btnAddConnection_Click);
             // 
             // Form1
             // 
